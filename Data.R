@@ -13,6 +13,8 @@ require(tidyverse)
 #######################
 # Getting London monitors
 sites <- importMeta(all = TRUE) %>%
+  # Filter for specific sites
+  filter(site %in% c("London Marylebone Road", "London N. Kensington")) %>%
   # Removing duplicates
   unique()
 
