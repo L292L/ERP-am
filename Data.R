@@ -18,7 +18,7 @@ sites <- importMeta(all = TRUE) %>%
 
 # Downloading pollutant/weather data
 dat <- importAURN(site = unique(sites$code),
-                  year = 2018,
+                  year = 2021:2023,
                   meta = FALSE,
                   data_type = 'hourly',
                   verbose = FALSE) 
@@ -28,9 +28,9 @@ dat <- importAURN(site = unique(sites$code),
 ######################
 # Saving database 
 write_csv(dat, 
-          file = paste('GBR_GMs_2018.csv', sep = ''))
+          file = paste('London2_21_23.csv', sep = ''))
 write_csv(sites, 
-          file = paste('GBR_GMs_metadata.csv', sep = ''))
+          file = paste('GL_metadata.csv', sep = ''))
 
 
 
